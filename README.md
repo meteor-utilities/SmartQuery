@@ -34,3 +34,28 @@ Returns an object with the following properties:
 - `count()`: (function) returns a count of the cursor.
 - `totalCount()`: (function) returns the total count for the cursor on the server (without a `limit`).
 - `hasMore()`: (function) whether there are more documents on the server (Boolean).
+
+### Security (TODO)
+
+You must define a security rule on the server for each collection before data can be published to users.
+
+`SmartQuery.addRule(collection, rule)`
+
+- `collection`: the collection.
+- `rule`: the rule.
+
+A rule has the following properties:
+
+- `filter`: a function that, if provided, must return `true` for every single document in the cursor.
+- `fields`: an array of fields that are publishable.
+
+Example:
+
+```js
+SmartQuery.addRule(Posts, {
+  filter: function (document) {
+    return document.published === true;
+  },
+  fields: ["_id", "title", "body"]
+});
+```
