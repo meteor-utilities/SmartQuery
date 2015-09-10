@@ -21,10 +21,11 @@ Template.posts.helpers({
 }
 ```
 
-`SmartQuery.create(id, cursor)`
+`SmartQuery.create(id, cursor, options)`
 
 - `id`: a unique id for this particular SmartQuery.
 - `cursor`: the cursor you want to use (e.g. `Posts.find({}, {limit: 5})`).
+- `options`: an optional options object.
 
 Returns an object with the following properties:
 
@@ -58,4 +59,16 @@ SmartQuery.addRule(Posts, {
   },
   fields: ["_id", "title", "body"]
 });
+```
+
+### Using SubsManager
+
+You can also use SmartQuery with [SubsManager](https://github.com/meteorhacks/subs-manager):
+
+```js
+var mySub = new SubsManager();
+var options = {
+  subscribe: mySub.subscribe.bind(mySub)
+};
+SmartQuery.create("the-id", Posts.find(), options);
 ```
