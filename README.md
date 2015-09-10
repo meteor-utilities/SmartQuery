@@ -48,8 +48,10 @@ You must define a security rule on the server for each collection before data ca
 
 A rule has the following properties:
 
-- `filter`: a function that, if provided, must return `true` for every single document in the cursor. Inside the filter function, you can call `this.userId` to access the current user's `_id`. 
-- `fields`: an array of fields that are publishable.
+- `filter(document)`: a function that, if provided, must return `true` for every single document in the cursor. Inside the filter function, you can call `this.userId` to access the current user's `_id`. 
+- `fields()`: a function that, if provided, must return an array of publishable fields. If no `fields` function is provided, all fields will be published. 
+
+In both the `filter` and `fields` function, you can access the current user `_id` with `this.userId`. 
 
 Example:
 
@@ -58,7 +60,9 @@ SmartQuery.addRule(Posts, {
   filter: function (document) {
     return document.published === true;
   },
-  fields: ["_id", "title", "body"]
+  fields: function (document) {
+    return ["_id", "title", "body"];
+  }
 });
 ```
 
@@ -73,3 +77,9 @@ var options = {
 };
 SmartQuery.create("the-id", Posts.find(), options);
 ```
+
+### Known Issues
+
+Right now the main shortcoming is that subscriptions are getting torn down/recreated every time you click "load more", which obviously is not great… I think this happens because subscriptions get stopped when a reactive context (which helpers are) is invalidated:
+
+> If you call Meteor.subscribe within a reactive computation, for example using Tracker.autorun, the subscription will automatically be cancelled when the computation is invalidated or stopped
