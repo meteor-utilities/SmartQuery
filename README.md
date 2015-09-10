@@ -60,7 +60,7 @@ SmartQuery.addRule(Posts, {
   filter: function (document) {
     return document.published === true;
   },
-  fields: function (document) {
+  fields: function () {
     return ["_id", "title", "body"];
   }
 });
