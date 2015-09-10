@@ -6,7 +6,8 @@ SmartQuery takes your regular `Collection.find()` calls, and wraps them in a spe
 
 ### Demo
 
-See demo repo here: https://github.com/SachaG/smartquery-demo
+- [Demo](http://smartquery.meteor.com)
+- [Demo code](https://github.com/SachaG/smartquery-demo)
 
 ### Using SmartQuery (Client)
 
