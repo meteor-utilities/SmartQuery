@@ -2,6 +2,10 @@
 
 Getting rid of `publish()` and `subscribe()`
 
+### Demo
+
+See demo repo here: https://github.com/SachaG/smartquery-demo
+
 ### Usage
 
 Just call `SmartQuery.create()` inside a regular template helper. For example:
