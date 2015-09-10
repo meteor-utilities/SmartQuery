@@ -8,7 +8,7 @@ SmartQuery takes your regular `Collection.find()` calls, and wraps them in a spe
 
 See demo repo here: https://github.com/SachaG/smartquery-demo
 
-### Usage
+### Using SmartQuery (Client)
 
 Just call `SmartQuery.create()` inside a regular template helper. For example:
 
@@ -35,7 +35,7 @@ Returns an object with the following properties:
 - `totalCount()`: (function) returns the total count for the cursor on the server (without a `limit`).
 - `hasMore()`: (function) whether there are more documents on the server (Boolean).
 
-### Security (TODO)
+### Defining A Security Layer (Server)
 
 You must define a security rule on the server for each collection before data can be published to users.
 
