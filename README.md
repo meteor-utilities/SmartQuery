@@ -46,7 +46,7 @@ You must define a security rule on the server for each collection before data ca
 
 A rule has the following properties:
 
-- `filter`: a function that, if provided, must return `true` for every single document in the cursor.
+- `filter`: a function that, if provided, must return `true` for every single document in the cursor. Inside the filter function, you can call `this.userId` to access the current user's `_id`. 
 - `fields`: an array of fields that are publishable.
 
 Example:
