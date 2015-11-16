@@ -1,8 +1,8 @@
 Package.describe({
-  name: "sacha:smartquery",
+  name: "utilities:smartquery",
   summary: "SmartQuery: Getting rid of publish and subscribe",
-  version: "0.1.2",
-  git: "https://github.com/SachaG/smartquery"
+  version: "0.1.4",
+  git: "https://github.com/meteor-utilities/SmartQuery"
 });
 
 Package.onUse(function(api) {
