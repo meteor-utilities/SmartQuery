@@ -1,7 +1,7 @@
 Package.describe({
   name: "utilities:smartquery",
   summary: "SmartQuery: Getting rid of publish and subscribe",
-  version: "0.1.4",
+  version: "0.1.5",
   git: "https://github.com/meteor-utilities/SmartQuery"
 });
 

@@ -4,6 +4,14 @@ Getting rid of `publish()` and `subscribe()`
 
 SmartQuery takes your regular `Collection.find()` calls, and wraps them in a special function that automatically sets up the subscription you need for you. 
 
+### Installation
+
+Install with:
+
+```
+meteor add utilities:smartquery
+```
+
 ### Demo
 
 - [Demo](http://smartquery.meteor.com)
