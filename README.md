@@ -77,9 +77,3 @@ var options = {
 };
 SmartQuery.create("the-id", Posts.find(), options);
 ```
-
-### Known Issues
-
-Right now the main shortcoming is that subscriptions are getting torn down/recreated every time you click "load more", which obviously is not great… I think this happens because subscriptions get stopped when a reactive context (which helpers are) is invalidated:
-
-> If you call Meteor.subscribe within a reactive computation, for example using Tracker.autorun, the subscription will automatically be cancelled when the computation is invalidated or stopped

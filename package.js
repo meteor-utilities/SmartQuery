@@ -1,7 +1,7 @@
 Package.describe({
   name: "sacha:smartquery",
   summary: "SmartQuery: Getting rid of publish and subscribe",
-  version: "0.1.1",
+  version: "0.1.2",
   git: "https://github.com/SachaG/smartquery"
 });
 
